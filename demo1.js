@@ -23,3 +23,9 @@ function add(a, b, c) {
 }
 console.log(add(4, 5));
 console.log(add(4, 5, 7));
+var myNum = 120;
+var d = myNum; //here with implicit typing, var 'd' will be of type number because assignment is on same line as declaration
+var e;
+e = myNum; //here with implicit typing, var 'e' will be of type any because assignment is not on same line as declaration
+console.log(d);
+console.log(e);
