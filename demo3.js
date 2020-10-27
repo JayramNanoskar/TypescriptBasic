@@ -41,5 +41,8 @@ var Programmer = /** @class */ (function (_super) {
     };
     return Programmer;
 }(Person));
-var aProgrammer = new Programmer("Jayram", "Nanoskar"); //here constructor get called
+var aProgrammer = new Programmer("Jayram", "Nanoskar"); //here constructor get called and type is of Programmer
+var bProgrammer = new Programmer("John", "Menon"); //creating another instance programmer and now of type person
 aProgrammer.allGreeting();
+bProgrammer.greet(); //works like polymorphism, will have access to those child class methods which are defined inside parent class
+//here greet() will be available but allGreeting() won't
