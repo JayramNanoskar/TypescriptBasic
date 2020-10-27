@@ -24,3 +24,10 @@ var myTuple: [number, boolean];
 myTuple = [1, false];
 
 console.log(myTuple);
+
+function add(a: number, b: number, c: number = 0): number{//we can pass default value with optional paramater
+    return a + b + c;
+}
+
+console.log(add(4, 5));
+console.log(add(4, 5, 7));

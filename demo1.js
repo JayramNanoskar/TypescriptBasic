@@ -17,3 +17,9 @@ console.log(myArr);
 var myTuple;
 myTuple = [1, false];
 console.log(myTuple);
+function add(a, b, c) {
+    if (c === void 0) { c = 0; }
+    return a + b + c;
+}
+console.log(add(4, 5));
+console.log(add(4, 5, 7));
