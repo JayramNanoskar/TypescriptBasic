@@ -25,7 +25,7 @@ myTuple = [1, false];
 
 console.log(myTuple);
 
-function add(a: number, b: number, c: number = 0): number{//we can pass default value with optional paramater
+function add(a: number, b: number, c: number = 0): number{//we can pass default value with optional parameter
     return a + b + c;
 }
 
@@ -40,3 +40,11 @@ e = myNum;//here with implicit typing, var 'e' will be of type any because assig
 
 console.log(d);
 console.log(e);
+
+var val: string | boolean; //union types to have multiple type values, means to loosen some type checking 
+//we can use type 'any' to have loosely type checking
+//we know typescript is tightly coupled with types, not loosely coupled as javascript
+
+val = "true";
+val = true;
+console.log(val);

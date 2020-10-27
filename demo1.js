@@ -29,3 +29,9 @@ var e;
 e = myNum; //here with implicit typing, var 'e' will be of type any because assignment is not on same line as declaration
 console.log(d);
 console.log(e);
+var val; //union types to have multiple type values, means to loosen some type checking 
+//we can use type 'any' to have loosely type checking
+//we know typescript is tightly coupled with types, not loosely coupled as javascript
+val = "true";
+val = true;
+console.log(val);
