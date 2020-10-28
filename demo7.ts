@@ -17,7 +17,7 @@ var cMsg = echoWithGeneric(3);//here with generics, incomming value is of type m
 console.log(cMsg);
 // console.log(dMsg);
 
-class Person{
+export class Person{
 
     constructor(public firstName: string, public lastName: string){
     }
@@ -27,10 +27,10 @@ class Person{
     }
 }
 
-class Admin extends Person{
+export class Admin extends Person{
 }
 
-class Manager extends Person{
+export class Manager extends Person{
 }
 
 let admin = new Admin("Dean", "Trott");

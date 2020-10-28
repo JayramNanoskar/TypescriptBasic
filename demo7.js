@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -11,6 +12,8 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+exports.__esModule = true;
+exports.Manager = exports.Admin = exports.Person = void 0;
 //Generics - let us allow to parameterize the Types like we parameterize values in function
 function echo(arg) {
     return arg;
@@ -36,6 +39,7 @@ var Person = /** @class */ (function () {
     };
     return Person;
 }());
+exports.Person = Person;
 var Admin = /** @class */ (function (_super) {
     __extends(Admin, _super);
     function Admin() {
@@ -43,6 +47,7 @@ var Admin = /** @class */ (function (_super) {
     }
     return Admin;
 }(Person));
+exports.Admin = Admin;
 var Manager = /** @class */ (function (_super) {
     __extends(Manager, _super);
     function Manager() {
@@ -50,6 +55,7 @@ var Manager = /** @class */ (function (_super) {
     }
     return Manager;
 }(Person));
+exports.Manager = Manager;
 var admin = new Admin("Dean", "Trott");
 var manager = new Manager("Suresh", "Deshpande");
 function personEcho(person) {
