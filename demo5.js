@@ -12,9 +12,12 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 var Person = /** @class */ (function () {
-    function Person(firstName, lastName) {
+    //we can assign value to readonly member in constructor also
+    function Person(hasHobby, firstName, lastName) {
+        this.hasHobby = hasHobby;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.hasBrain = true; //readonly modifier- we can assign value once and cannot change further, just we can access it
     }
     Person.prototype.greet = function () {
         console.log("Hello...Person");
@@ -38,8 +41,10 @@ var Student = /** @class */ (function (_super) {
     };
     return Student;
 }(Person));
-var aStudent = new Student("Mohan", "Rajput");
+var aStudent = new Student(true, "Mohan", "Rajput");
 // console.log(aStudent.firstName);//accessing public member variable, private/protected variables cannot be access
 console.log(aStudent.getFirstName()); //accessing private variables through getter
 aStudent.getGreeting();
 aStudent.greet(); //calling overrided method/child method here
+console.log(aStudent.hasBrain);
+console.log(aStudent.hasHobby);
