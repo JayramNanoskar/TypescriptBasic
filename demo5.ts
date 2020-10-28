@@ -1,10 +1,6 @@
 class Person{
-    private firstName: string;//member variable bydefault public 
-    private lastName: string;
 
-    constructor(firstname: string, lastname:string){//constructor
-        this.firstName = firstname;
-        this.lastName = lastname;
+    constructor(private firstName: string, private lastName:string){//just need to specify access modifier, so parameters treats as a member variable + take the incomming value + assign it to member varibles
     }
     greet(){//method
         console.log("Hello...Person");
@@ -25,7 +21,7 @@ class Student extends Person{
 }
 
 var aStudent = new Student("Mohan", "Rajput");
-// console.log(aStudent.firstName);//accessing public member variable, private variables cannot be access
+// console.log(aStudent.firstName);//accessing public member variable, private/protected variables cannot be access
 console.log(aStudent.getFirstName());//accessing private variables through getter
 aStudent.getGreeting();
 aStudent.greet();//calling overrided method/child method here

@@ -12,9 +12,9 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 var Person = /** @class */ (function () {
-    function Person(firstname, lastname) {
-        this.firstName = firstname;
-        this.lastName = lastname;
+    function Person(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
     Person.prototype.greet = function () {
         console.log("Hello...Person");
@@ -39,7 +39,7 @@ var Student = /** @class */ (function (_super) {
     return Student;
 }(Person));
 var aStudent = new Student("Mohan", "Rajput");
-// console.log(aStudent.firstName);//accessing public member variable, private variables cannot be access
+// console.log(aStudent.firstName);//accessing public member variable, private/protected variables cannot be access
 console.log(aStudent.getFirstName()); //accessing private variables through getter
 aStudent.getGreeting();
 aStudent.greet(); //calling overrided method/child method here
