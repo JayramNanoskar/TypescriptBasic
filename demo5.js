@@ -19,6 +19,9 @@ var Person = /** @class */ (function () {
     Person.prototype.greet = function () {
         console.log("Hello...Person");
     };
+    Person.prototype.getFirstName = function () {
+        return this.firstName;
+    };
     return Person;
 }());
 var Student = /** @class */ (function (_super) {
@@ -36,6 +39,7 @@ var Student = /** @class */ (function (_super) {
     return Student;
 }(Person));
 var aStudent = new Student("Mohan", "Rajput");
-console.log(aStudent.firstName); //accessing member variable
+// console.log(aStudent.firstName);//accessing public member variable, private variables cannot be access
+console.log(aStudent.getFirstName()); //accessing private variables through getter
 aStudent.getGreeting();
 aStudent.greet(); //calling overrided method/child method here
