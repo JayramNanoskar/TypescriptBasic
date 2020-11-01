@@ -25,12 +25,14 @@ var User_1 = require("./User");
 var GithubApiService = /** @class */ (function () {
     function GithubApiService() {
     }
-    GithubApiService.getUserInfo = function (userName) {
+    GithubApiService.getUserInfo = function (userName, cb) {
+        // creating callback function with signature as parameter to getUserInfo() 
         axios.default.get('https://api.github.com/users/' + userName)
             .then(function (response) {
             // handle success
             var user = new User_1.User(response.data);
-            console.log(user);
+            // console.log(user);
+            cb(user); //executing the callback
         })
             .catch(function (error) {
             // handle error
