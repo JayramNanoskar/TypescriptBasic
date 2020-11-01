@@ -21,6 +21,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GithubApiService = void 0;
 var axios = __importStar(require("axios")); // library/node module/package to make rest api calls
+var User_1 = require("./User");
 var GithubApiService = /** @class */ (function () {
     function GithubApiService() {
     }
@@ -28,8 +29,8 @@ var GithubApiService = /** @class */ (function () {
         axios.default.get('https://api.github.com/users/' + userName)
             .then(function (response) {
             // handle success
-            console.log("Ok");
-            console.log(response.data);
+            var user = new User_1.User(response.data);
+            console.log(user);
         })
             .catch(function (error) {
             // handle error
