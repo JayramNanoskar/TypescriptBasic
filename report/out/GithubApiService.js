@@ -21,6 +21,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GithubApiService = void 0;
 var axios = __importStar(require("axios")); // library/node module/package to make rest api calls
+var Repo_1 = require("./Repo");
 var User_1 = require("./User");
 var GithubApiService = /** @class */ (function () {
     function GithubApiService() {
@@ -33,6 +34,23 @@ var GithubApiService = /** @class */ (function () {
             var user = new User_1.User(response.data);
             // console.log(user);
             cb(user); //executing the callback
+        })
+            .catch(function (error) {
+            // handle error
+            console.log("Something went wrong");
+            // console.log(error);
+        })
+            .then(function () {
+            // always executed
+        });
+    };
+    GithubApiService.prototype.getRepos = function (userName, cb) {
+        axios.default.get('https://api.github.com/users/' + userName + '/repos')
+            .then(function (response) {
+            // handle success
+            var repos = response.data;
+            var resp = repos.map(function (repo) { return (new Repo_1.Repo(repo)); });
+            cb(resp); //executing the callback
         })
             .catch(function (error) {
             // handle error
